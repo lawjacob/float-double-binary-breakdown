@@ -103,7 +103,7 @@ class IEEE754Double:
             f"Exponent: {self.binary[1:12]} = {self.get_actual_exponent()}\n"
             f"Mantissa: {self.binary[12:]}\n"
             f"Deconstructed: {' + '.join(self.get_mantissa_terms())}"
-            f"{' + trailing 0s' if len(self.binary[12:].rstrip('0')) < 52 else ''}\n"
+            f"{' + trailing 0s' if len(self.binary[12:].rstrip('0')) < 52 else ''} = {mantissa_sum-1}\n"
             f"With implicit 1: {mantissa_sum}\n"
             f"Final value: {'+1' if self.sign == 0 else '-1'}*2^{self.get_actual_exponent()}"
             f"*{mantissa_sum} = {self.to_double()}"
